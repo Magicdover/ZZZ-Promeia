@@ -1,0 +1,30 @@
+# 构建产物 / 容器相关
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# 文档与文本
+README.md
+提示词.txt
+*.md
+
+# Git
+.git
+.gitignore
+.github
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode
+.idea
+*.swp
+*.swo
+
+# 依赖（虽然本项目无）
+node_modules
+npm-debug.log*
+yarn-error.log*

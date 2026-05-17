@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>PROMEIA · 普罗米娅 // 坎卜斯黑枝 裁决官档案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&family=Noto+Sans+SC:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="images/阵营徽章.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== 全局扫描线 / 噪点遮罩 ===== -->
+<div class="scanlines" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ===== 自定义鼠标 ===== -->
+<div class="cursor-outer" id="cursorOuter" aria-hidden="true"></div>
+<div class="cursor-inner" id="cursorInner" aria-hidden="true"></div>
+
+<!-- ===== 顶部状态条 / HUD ===== -->
+<header class="hud-top">
+  <div class="hud-left">
+    <img src="images/阵营徽章.png" alt="坎卜斯黑枝徽章" class="hud-logo" />
+    <div class="hud-text">
+      <div class="hud-line-1">KRAMPUS // COMPLIANCE AUTHORITY</div>
+      <div class="hud-line-2">坎卜斯黑枝 · 内部档案 NO.<span class="rand">0274-Ω</span></div>
+    </div>
+  </div>
+  <nav class="hud-nav">
+    <a href="#hero" data-nav="00">// HERO</a>
+    <a href="#dossier" data-nav="01">// DOSSIER</a>
+    <a href="#charm" data-nav="02">// CHARM</a>
+    <a href="#gallery" data-nav="03">// GALLERY</a>
+    <a href="#verdict" data-nav="04">// VERDICT</a>
+  </nav>
+  <div class="hud-right">
+    <span class="status-dot"></span>
+    <span class="status-text">REC · LIVE FEED</span>
+    <span class="status-time" id="liveClock">--:--:--</span>
+  </div>
+</header>
+
+<!-- ===== 侧边索引 ===== -->
+<aside class="side-index">
+  <div class="side-row"><span>SEC</span><span>STATUS</span></div>
+  <a href="#hero" class="side-item"><span>00</span><span>HERO</span><i></i></a>
+  <a href="#dossier" class="side-item"><span>01</span><span>DOSSIER</span><i></i></a>
+  <a href="#charm" class="side-item"><span>02</span><span>CHARM</span><i></i></a>
+  <a href="#gallery" class="side-item"><span>03</span><span>GALLERY</span><i></i></a>
+  <a href="#verdict" class="side-item"><span>04</span><span>VERDICT</span><i></i></a>
+</aside>
+
+<!-- =========================================================
+   00 // HERO  全屏视频
+========================================================= -->
+<section id="hero" class="hero">
+  <img class="hero-video" src="images/LOALO.jpg" alt="普罗米娅 - LOALO" />
+  <div class="hero-tint"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-stream" id="dataStream"></div>
+
+  <!-- 角框装饰 -->
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <!-- 中央标题 -->
+  <div class="hero-center">
+    <div class="tag-top">
+      <span class="tag-pill">S 级 · 冰属性 · 异常代理人</span>
+      <span class="tag-divider"></span>
+      <span class="tag-pill outline">CASE FILE / 2.8 EDITION</span>
+    </div>
+
+    <h1 class="glitch-title" data-text="PROMEIA">PROMEIA</h1>
+    <div class="title-sub">
+      <span class="sub-zh">普 罗 米 娅</span>
+      <span class="sub-line"></span>
+      <span class="sub-en">JUDICATOR · OUTER-RING SWEEPER</span>
+    </div>
+
+    <p class="hero-desc">
+      镣锁松脱，弯刀出鞘。她以裁决之名行刑，以冰封之姿赦罪。
+      <br />
+      <span class="hero-desc-en">"Where the chains break, the verdict begins."</span>
+    </p>
+
+    <div class="hero-actions">
+      <a href="#dossier" class="btn-primary">
+        <span class="btn-label">ACCESS DOSSIER</span>
+        <span class="btn-arrow">▸▸</span>
+      </a>
+      <a href="#gallery" class="btn-ghost">
+        <span class="btn-label">// 进入画廊</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 底部数据条 -->
+  <div class="hero-foot">
+    <div class="foot-block">
+      <div class="foot-key">HEIGHT</div><div class="foot-val">174 CM</div>
+    </div>
+    <div class="foot-block">
+      <div class="foot-key">FACTION</div><div class="foot-val">KRAMPUS CA.</div>
+    </div>
+    <div class="foot-block">
+      <div class="foot-key">ELEMENT</div><div class="foot-val">CRYO · ANOMALY</div>
+    </div>
+    <div class="foot-block">
+      <div class="foot-key">WEAPON</div><div class="foot-val">DARTS // CURVED BLADE</div>
+    </div>
+    <div class="foot-block">
+      <div class="foot-key">RANK</div><div class="foot-val">S-CLASS</div>
+    </div>
+  </div>
+
+  <!-- 滚动提示 -->
+  <div class="scroll-cue">
+    <span>SCROLL</span>
+    <span class="scroll-line"></span>
+  </div>
+</section>
+
+<!-- =========================================================
+   01 // DOSSIER  角色档案
+========================================================= -->
+<section id="dossier" class="section dossier">
+  <div class="sec-header">
+    <span class="sec-num">/01</span>
+    <h2 class="sec-title" data-text="CHARACTER DOSSIER">CHARACTER DOSSIER</h2>
+    <span class="sec-zh">角色档案 · 卷宗 #PMA-274</span>
+  </div>
+
+  <div class="dossier-grid">
+
+    <!-- 左：立绘卡 -->
+    <div class="dossier-portrait">
+      <div class="portrait-frame">
+        <img src="images/MY Promeia.jpg" alt="普罗米娅立绘" />
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="frame-scan"></div>
+        <div class="frame-tag">// SUBJECT_ID: PMA-274 · VERIFIED</div>
+      </div>
+      <div class="portrait-badges">
+        <img src="images/阵营徽章.png" alt="徽章" />
+        <div class="badge-info">
+          <div>KRAMPUS COMPLIANCE</div>
+          <div class="badge-sub">坎卜斯黑枝 · 裁决执行部</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右：数据面板 -->
+    <div class="dossier-data">
+      <div class="data-row">
+        <div class="data-cell">
+          <div class="cell-key">代号 / CODENAME</div>
+          <div class="cell-val">PROMEIA</div>
+        </div>
+        <div class="data-cell">
+          <div class="cell-key">译名 / NAME</div>
+          <div class="cell-val">普罗米娅</div>
+        </div>
+        <div class="data-cell">
+          <div class="cell-key">职位 / TITLE</div>
+          <div class="cell-val">裁决官 · JUDICATOR</div>
+        </div>
+        <div class="data-cell">
+          <div class="cell-key">阵营 / FACTION</div>
+          <div class="cell-val">坎卜斯黑枝</div>
+        </div>
+        <div class="data-cell">
+          <div class="cell-key">身高 / HEIGHT</div>
+          <div class="cell-val">174 CM</div>
+        </div>
+        <div class="data-cell">
+          <div class="cell-key">登场 / DEBUT</div>
+          <div class="cell-val">VER. 2.8</div>
+        </div>
+      </div>
+
+      <div class="stat-block">
+        <div class="stat-title">// COMBAT METRICS</div>
+
+        <div class="stat-bar">
+          <div class="stat-label"><span>冰属性输出</span><span class="stat-num">96</span></div>
+          <div class="bar"><div class="fill" data-fill="96"></div></div>
+        </div>
+        <div class="stat-bar">
+          <div class="stat-label"><span>异常爆发</span><span class="stat-num">92</span></div>
+          <div class="bar"><div class="fill" data-fill="92"></div></div>
+        </div>
+        <div class="stat-bar">
+          <div class="stat-label"><span>近战连段</span><span class="stat-num">88</span></div>
+          <div class="bar"><div class="fill" data-fill="88"></div></div>
+        </div>
+        <div class="stat-bar">
+          <div class="stat-label"><span>远程飞镖</span><span class="stat-num">85</span></div>
+          <div class="bar"><div class="fill" data-fill="85"></div></div>
+        </div>
+        <div class="stat-bar">
+          <div class="stat-label"><span>处刑威慑</span><span class="stat-num">99</span></div>
+          <div class="bar"><div class="fill" data-fill="99"></div></div>
+        </div>
+      </div>
+
+      <div class="quote-box">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">
+          "镣锁，是我背负的过去；弯刀，是我裁定的现在。
+          在外环游荡的清扫者也好，坎卜斯的裁决官也罢——名号会变，但落下的判决，永远不变。"
+        </p>
+        <div class="quote-from">— PROMEIA / 内部录音 #07</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+   02 // CHARM  魅力解析
+========================================================= -->
+<section id="charm" class="section charm">
+  <div class="sec-header">
+    <span class="sec-num">/02</span>
+    <h2 class="sec-title" data-text="CHARM ANALYSIS">CHARM ANALYSIS</h2>
+    <span class="sec-zh">魅力解析 · 三维侧写</span>
+  </div>
+
+  <div class="charm-grid">
+
+    <article class="charm-card">
+      <div class="charm-img">
+        <img src="images/144005640_p0.JPG" alt="冰封裁决" />
+        <div class="charm-overlay"></div>
+      </div>
+      <div class="charm-body">
+        <div class="charm-tag">01 · FROST VERDICT</div>
+        <h3 class="charm-title">冰封 · 处刑式裁决</h3>
+        <p class="charm-text">
+          她以冰封罪愆，以寒霜定罪。每一次出招都像是在签署一份判决书——
+          冷冽的弧光自指尖延展，将敌人逐帧封锁；待镣锁解除的瞬间，
+          压抑的力量像极地破裂般爆开，干脆利落，不留任何余地。
+        </p>
+      </div>
+    </article>
+
+    <article class="charm-card">
+      <div class="charm-img">
+        <img src="images/143765482_p0.jpg" alt="坎卜斯黑枝" />
+        <div class="charm-overlay"></div>
+      </div>
+      <div class="charm-body">
+        <div class="charm-tag">02 · CHAIN &amp; ABSOLVE</div>
+        <h3 class="charm-title">镣锁 · 与赦罪同行</h3>
+        <p class="charm-text">
+          作为坎卜斯黑枝的裁决官，普罗米娅同时携带着"惩罚"与"赦免"两副面孔。
+          紫与黑的披风像一道未宣读的判词，飞镖与弯刀互为攻守；
+          她从不张扬，却在每一次落地时让对手意识到——审判已经开始。
+        </p>
+      </div>
+    </article>
+
+    <article class="charm-card">
+      <div class="charm-img">
+        <img src="images/144030167_p2.jpg" alt="外环清扫者" />
+        <div class="charm-overlay"></div>
+      </div>
+      <div class="charm-body">
+        <div class="charm-tag">03 · OUTER-RING GHOST</div>
+        <h3 class="charm-title">外环 · 神秘的清扫者</h3>
+        <p class="charm-text">
+          在被纳入坎卜斯之前，她是外环传说里没有名字的"清扫者"。
+          有人见过她从废墟走出，身后只剩寂静与凝结的空气；
+          那段历史像一段被涂黑的卷宗——成为她沉重而迷人的底色。
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =========================================================
+   03 // GALLERY  3D 卡片画廊
+========================================================= -->
+<section id="gallery" class="section gallery">
+  <div class="sec-header">
+    <span class="sec-num">/03</span>
+    <h2 class="sec-title" data-text="VISUAL ARCHIVE">VISUAL ARCHIVE</h2>
+    <span class="sec-zh">视觉档案 · 立体卷宗</span>
+  </div>
+
+  <p class="gallery-desc">
+    所有图像由档案部门归档，按裁决时间序列排列。你可以使用鼠标拖拽、滚轮、左右按钮，
+    或在移动端横向滑动来浏览这份立体卷宗。每一帧都是一次裁决的余像。
+  </p>
+
+  <div class="gallery-stage">
+    <button class="gal-btn prev" id="galPrev" aria-label="上一张">
+      <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+
+    <div class="coverflow" id="coverflow">
+      <!-- JS 注入 -->
+    </div>
+
+    <button class="gal-btn next" id="galNext" aria-label="下一张">
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+  </div>
+
+  <div class="gallery-meta">
+    <span class="meta-key">CURRENT FRAME</span>
+    <span class="meta-val" id="galIndex">01 / 01</span>
+    <span class="meta-sep"></span>
+    <span class="meta-key">FILE</span>
+    <span class="meta-val" id="galName">--</span>
+  </div>
+</section>
+
+<!-- =========================================================
+   04 // VERDICT  致敬尾声
+========================================================= -->
+<section id="verdict" class="section verdict">
+  <div class="verdict-bg">
+    <img src="images/PROMEIA.webp" alt="" />
+    <div class="verdict-tint"></div>
+  </div>
+
+  <div class="verdict-inner">
+    <div class="sec-header center">
+      <span class="sec-num">/04</span>
+      <h2 class="sec-title big" data-text="THE FINAL VERDICT">THE FINAL VERDICT</h2>
+      <span class="sec-zh">最 终 裁 决</span>
+    </div>
+
+    <p class="verdict-text">
+      她是冰，是裁决，是镣锁松脱时那一声脆响。
+      她在街头潮酷的霓虹之间踩着鼓点登场，在喧嚣之中带来一段无声的寂静。
+      作为坎卜斯黑枝的裁决官，她以冷冽提醒世界——
+      法的边界存在；作为外环走出的清扫者，她又用过去告诉自己——
+      宽恕也曾发生。这便是普罗米娅，凌厉而温度尚存的执刑者。
+    </p>
+
+    <div class="verdict-sign">
+      <div class="sign-line"></div>
+      <div class="sign-text">
+        <span>FILED &amp; SEALED</span>
+        <span>BY KRAMPUS COMPLIANCE AUTHORITY</span>
+      </div>
+      <div class="sign-line"></div>
+    </div>
+
+    <div class="verdict-credit">
+      <div>FAN-MADE TRIBUTE PAGE · NON-COMMERCIAL</div>
+      <div>角色 / 视觉素材版权归 米哈游 · ZENLESS ZONE ZERO 所有</div>
+      <div class="credit-glitch" data-text="// END OF FILE //">// END OF FILE //</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIGHTBOX 灯箱 ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lb-stage">
+    <span class="lb-corner tl"></span>
+    <span class="lb-corner tr"></span>
+    <span class="lb-corner bl"></span>
+    <span class="lb-corner br"></span>
+
+    <div class="lb-track" id="lbTrack"></div>
+
+    <button class="lb-btn prev" id="lbPrev" aria-label="上一张">
+      <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+    <button class="lb-btn next" id="lbNext" aria-label="下一张">
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+
+    <div class="lb-info">
+      <span id="lbIndex">01 / 01</span>
+      <span id="lbName">--</span>
+    </div>
+  </div>
+
+  <button class="lb-close" id="lbClose" aria-label="关闭">
+    <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
