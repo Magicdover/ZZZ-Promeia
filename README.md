@@ -38,6 +38,7 @@
 ├── Dockerfile                  # 容器构建文件（nginx:alpine）
 ├── nginx.conf                  # nginx 站点配置
 ├── .dockerignore               # Docker 构建忽略清单
+├── vercel.json                 # Vercel 部署配置（缓存 / 安全头）
 ├── README.md                   # 当前文件
 ├── 提示词.txt                  # 原始需求描述
 └── images/                     # 角色图片素材（23 张，含 Hero 背景 LOALO.jpg）
@@ -243,6 +244,30 @@ docker push <your-username>/promeia-tribute:latest
 docker run -d --name promeia -p 127.0.0.1:8080:80 promeia-tribute:latest
 # 然后由宿主机的 Caddy 反代 8080 端口并自动签发证书
 ```
+
+### 9.6 部署到 Vercel（推荐：零配置自动部署）
+
+项目根目录已包含 `vercel.json`（缓存策略 + 安全头，与 nginx 配置对齐）。两种方式任选其一：
+
+**方式 1 · GitHub 联动（推荐）**
+
+1. 访问 https://vercel.com/new
+2. Import 选择 GitHub 仓库 `Magicdover/ZZZ-Promeia`
+3. Framework Preset 选 **Other**（纯静态），其余保持默认，点 **Deploy**
+4. 约 10 秒后即可获得 `https://zzz-promeia.vercel.app`（或自定义域名）形式的访问地址
+5. 之后每次 `git push origin main` 都会自动触发部署
+
+**方式 2 · Vercel CLI**
+
+```bash
+# 一次性 npx 调用，无需全局安装
+npx vercel        # 首次会引导浏览器登录
+npx vercel --prod # 直接发布到生产环境
+```
+
+**方式 3 · Vercel 拖拽部署**
+
+将整个项目根目录（除 `videos/`）打包成 zip 上传到 https://vercel.com/new 也可，但失去自动部署能力，不推荐。
 
 ---
 
