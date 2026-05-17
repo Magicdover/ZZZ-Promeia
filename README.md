@@ -2,6 +2,12 @@
 
 > 《绝区零》2.8 版本 S 级冰属性异常代理人 · 坎卜斯黑枝裁决官「普罗米娅」的粉丝向单页展示，纯前端三件套打造，致敬 ZZZ 都市潮酷美学与处刑式裁决主题。
 
+[![Live Preview](https://img.shields.io/badge/LIVE-zzz--promeia.vercel.app-7af6ff?style=for-the-badge&logo=vercel&logoColor=white&labelColor=05060a)](https://zzz-promeia.vercel.app/)
+[![GitHub](https://img.shields.io/badge/SOURCE-Magicdover%2FZZZ--Promeia-9b6bff?style=for-the-badge&logo=github&logoColor=white&labelColor=05060a)](https://github.com/Magicdover/ZZZ-Promeia)
+[![License](https://img.shields.io/badge/USE-Fan--Made%20%2F%20Non--Commercial-ff3aa5?style=for-the-badge&labelColor=05060a)](#十一致谢与免责)
+
+**🌐 在线访问**：<https://zzz-promeia.vercel.app/>
+
 ---
 
 ## 一、项目简介
